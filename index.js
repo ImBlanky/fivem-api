@@ -1,5 +1,5 @@
+#!/usr/bin/env node
 const fetch = require('node-fetch');
-
 var version = require("discord.js").version.split('');
 
 
@@ -20,11 +20,11 @@ async function getPlayersObj(ip, port) {
   }
 
   const res = await fetch(`http://${ip}:${port}/players.json`)
-  const data = await res.json()
+
 
 
   if (res.ok) {
-
+    const data = await res.json()
     if (data.length === 0) {
       throw new Error('The server is starting up!')
     } else {
@@ -43,10 +43,10 @@ async function getPlayers(ip, port) {
   }
 
   const res = await fetch(`http://${ip}:${port}/players.json`)
-  const data = await res.json()
+
   
   if (res.ok) {
-
+    const data = await res.json()
     if (data.length === 0) {
       throw new Error(`The server is starting up!`)
     } else {
@@ -66,11 +66,11 @@ async function getMaxPlayers(ip, port) {
 
 
   const res = await fetch(`http://${ip}:${port}/dynamic.json`)
-  const data = await res.json()
+
 
 
   if (res.ok) {
-
+    const data = await res.json()
     if (data.length === 0) {
       throw new Error('The server is starting up!')
     } else {
@@ -84,12 +84,16 @@ async function getMaxPlayers(ip, port) {
 
 async function getServerResources(ip, port) {
 
+  if (version != 12) {
+    throw new Error('Invalid discord.js version! Te discord.js version must be v12')
+  }
+
   const res = await fetch(`http://${ip}:${port}/info.json`)
-  const data = await res.json()
+
 
 
   if (res.ok) {
-
+    const data = await res.json()
     if (data.length === 0) {
       throw new Error('The server is starting up!')
     } else {
@@ -103,12 +107,16 @@ async function getServerResources(ip, port) {
 
 async function getServerVars(ip, port) {
 
+  if (version != 12) {
+    throw new Error('Invalid discord.js version! Te discord.js version must be v12')
+  }
+
   const res = await fetch(`http://${ip}:${port}/info.json`)
-  const data = await res.json()
+
 
 
   if (res.ok) {
-
+    const data = await res.json()
     if (data.length === 0) {
       throw new Error('The server is starting up!')
     } else {
@@ -122,12 +130,16 @@ async function getServerVars(ip, port) {
 
 async function getServerVersion(ip, port) {
 
+  if (version != 12) {
+    throw new Error('Invalid discord.js version! Te discord.js version must be v12')
+  }
+
   const res = await fetch(`http://${ip}:${port}/info.json`)
-  const data = await res.json()
+
 
 
   if (res.ok) {
-
+    const data = await res.json()
     if (data.length === 0) {
       throw new Error('The server is starting up!')
     } else {
@@ -142,12 +154,16 @@ async function getServerVersion(ip, port) {
 
 async function getServerLicense(ip, port) {
 
-  const res =  await fetch(`http://${ip}:${port}/info.json`)
-  const data = await res.json()
+  if (version != 12) {
+    throw new Error('Invalid discord.js version! Te discord.js version must be v12')
+  }
+
+  const res = await fetch(`http://${ip}:${port}/info.json`)
+
 
 
   if (res.ok) {
-
+    const data = await res.json()
     if (data.length === 0) {
       throw new Error('The server is starting up!')
     } else {
