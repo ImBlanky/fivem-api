@@ -2,29 +2,31 @@
 A javascript API wich interacts with a FiveM server.
 
 **How To Install :**
+
 `npm i js-fivem-api`
+
 
 **How-to use :** 
 
 Here is an example to display the number of online players.
-`
+```
 const server = require("js-fivem-api");
 
 var ip = "YOUR-IP-GOES-HERE"
 var port = "YOUR-PORT-GOES-HERE" // e.x. "30120"
 
 server.getPlayers(ip, port).then(data => console.log(data));
-`
+```
 
 Here is an example to display an object wich contains all the resources of a server.
-`
+```
 const server = require("js-fivem-api");
 
 var ip = "YOUR-IP-GOES-HERE"
 var port = "YOUR-PORT-GOES-HERE" // e.x. "30120"
 
 server.getServerResources(ip, port).then(data => console.log(data));
-`
+```
 
 
 # Functions :
@@ -37,7 +39,6 @@ server.getServerResources(ip, port).then(data => console.log(data));
 - **getServerLicense(ip, port)** Displays the server license.
 
 
-# Example Server Status :
-`
+#### Important
 
-`
+Before using the api please read the LICENSE.
