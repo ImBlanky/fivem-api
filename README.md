@@ -1,4 +1,4 @@
-# fivem-api
+# js-fivem-api
 A javascript API which interacts with a FiveM server.
 
 **How To Install :**
